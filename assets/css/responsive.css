@@ -1,0 +1,588 @@
+/* SOS CISP - Estilos Responsivos */
+/* Complementa o design moderno com responsividade avançada */
+
+/* Breakpoints */
+@media (max-width: 1200px) {
+    .dashboard-container,
+    .citizen-container {
+        padding: var(--spacing-lg);
+    }
+    
+    .stats-overview {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .admin-sections {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    .access-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--spacing-lg);
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .dashboard-main,
+    .citizen-main {
+        padding: var(--spacing-lg);
+    }
+    
+    .dashboard-header,
+    .citizen-header {
+        padding: var(--spacing-lg) var(--spacing-xl);
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajustes gerais para tablets */
+    .container {
+        margin: var(--spacing-md);
+        padding: var(--spacing-lg);
+        max-width: 100%;
+    }
+    
+    .splash-content {
+        max-width: 100%;
+        padding: var(--spacing-lg);
+    }
+    
+    .logo-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .logo-text {
+        font-size: var(--font-size-3xl);
+    }
+    
+    /* Grids responsivos */
+    .access-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .stats-overview {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .admin-stats {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .admin-sections {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Formulários */
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    /* Headers */
+    .dashboard-header,
+    .citizen-header {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        text-align: center;
+        padding: var(--spacing-lg);
+    }
+    
+    .header-left,
+    .header-right {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .user-profile {
+        justify-content: center;
+    }
+    
+    .header-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    /* Seções */
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
+    
+    .section-filters {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    
+    .filter-button {
+        flex: 1;
+        min-width: 120px;
+        justify-content: center;
+    }
+    
+    /* Botão SOS */
+    .sos-button {
+        width: 120px;
+        height: 120px;
+        font-size: var(--font-size-xl);
+    }
+    
+    .sos-icon {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .sos-text {
+        font-size: var(--font-size-base);
+    }
+    
+    /* Mensagens rápidas */
+    .quick-messages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+    
+    .quick-message-btn {
+        padding: var(--spacing-sm);
+        font-size: var(--font-size-xs);
+    }
+    
+    .quick-message-btn i {
+        font-size: var(--font-size-base);
+    }
+    
+    /* Input de mensagem */
+    .message-input-container {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .message-input-container .send-button {
+        align-self: stretch;
+        width: 100%;
+    }
+    
+    /* Notificações */
+    .notification-container {
+        top: var(--spacing-md);
+        right: var(--spacing-md);
+        left: var(--spacing-md);
+    }
+    
+    .notification {
+        max-width: none;
+        transform: translateY(-100%);
+    }
+    
+    .notification.show {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes para smartphones */
+    .container {
+        margin: var(--spacing-sm);
+        padding: var(--spacing-md);
+    }
+    
+    .splash-content {
+        padding: var(--spacing-md);
+    }
+    
+    .logo-image {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .logo-text {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .logo-subtitle {
+        font-size: var(--font-size-base);
+    }
+    
+    .main-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .main-subtitle {
+        font-size: var(--font-size-base);
+    }
+    
+    /* Cards */
+    .access-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .card-icon {
+        width: 50px;
+        height: 50px;
+        font-size: var(--font-size-xl);
+    }
+    
+    .card-content h3 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .card-content p {
+        font-size: var(--font-size-sm);
+    }
+    
+    /* Estatísticas */
+    .stat-card {
+        padding: var(--spacing-lg);
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+    
+    .stat-icon {
+        width: 50px;
+        height: 50px;
+        font-size: var(--font-size-xl);
+    }
+    
+    .stat-content h3 {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .stat-trend {
+        justify-content: center;
+    }
+    
+    /* Formulários */
+    .form-group input,
+    .form-group textarea {
+        padding: var(--spacing-sm) var(--spacing-md);
+        padding-left: calc(var(--spacing-md) + var(--spacing-sm) + 20px);
+        font-size: var(--font-size-sm);
+    }
+    
+    .input-icon {
+        left: var(--spacing-sm);
+        font-size: var(--font-size-base);
+    }
+    
+    .submit-button {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: var(--font-size-sm);
+    }
+    
+    /* Botões */
+    .back-button {
+        top: var(--spacing-md);
+        left: var(--spacing-md);
+        width: 45px;
+        height: 45px;
+    }
+    
+    .action-button {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .logout-button {
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: var(--font-size-xs);
+    }
+    
+    /* Feature cards */
+    .feature-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .feature-header h3 {
+        font-size: var(--font-size-base);
+    }
+    
+    .feature-button {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+    
+    /* Mensagens rápidas */
+    .quick-messages-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xs);
+    }
+    
+    .quick-message-btn {
+        padding: var(--spacing-sm);
+        font-size: var(--font-size-xs);
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
+    }
+    
+    .quick-message-btn i {
+        font-size: var(--font-size-sm);
+    }
+    
+    /* Dashboard */
+    .dashboard-main,
+    .citizen-main {
+        padding: var(--spacing-md);
+    }
+    
+    .messages-dashboard {
+        padding: var(--spacing-lg);
+    }
+    
+    .section-title h3 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .message-item {
+        padding: var(--spacing-md);
+    }
+    
+    .message-sender {
+        font-size: var(--font-size-sm);
+    }
+    
+    .message-text {
+        font-size: var(--font-size-xs);
+    }
+    
+    /* Admin */
+    .admin-stat-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .admin-stat-card .stat-content h3 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .admin-section {
+        padding: var(--spacing-lg);
+    }
+    
+    .admin-section h3 {
+        font-size: var(--font-size-base);
+    }
+    
+    .user-item {
+        padding: var(--spacing-sm);
+        font-size: var(--font-size-sm);
+    }
+}
+
+@media (max-width: 360px) {
+    /* Ajustes para telas muito pequenas */
+    .container {
+        margin: var(--spacing-xs);
+        padding: var(--spacing-sm);
+    }
+    
+    .logo-image {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .logo-text {
+        font-size: var(--font-size-xl);
+    }
+    
+    .main-title {
+        font-size: var(--font-size-xl);
+    }
+    
+    .sos-button {
+        width: 100px;
+        height: 100px;
+        font-size: var(--font-size-lg);
+    }
+    
+    .sos-icon {
+        font-size: var(--font-size-xl);
+    }
+    
+    .sos-text {
+        font-size: var(--font-size-sm);
+    }
+    
+    .access-card {
+        padding: var(--spacing-md);
+    }
+    
+    .card-content h3 {
+        font-size: var(--font-size-base);
+    }
+    
+    .card-content p {
+        font-size: var(--font-size-xs);
+    }
+    
+    .stat-card {
+        padding: var(--spacing-md);
+    }
+    
+    .stat-content h3 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .feature-card {
+        padding: var(--spacing-md);
+    }
+    
+    .feature-header h3 {
+        font-size: var(--font-size-sm);
+    }
+    
+    .quick-message-btn {
+        padding: var(--spacing-xs);
+        font-size: var(--font-size-xs);
+    }
+    
+    .quick-message-btn i {
+        font-size: var(--font-size-xs);
+    }
+}
+
+/* Orientação Landscape em dispositivos móveis */
+@media (max-height: 500px) and (orientation: landscape) {
+    .splash-screen {
+        padding: var(--spacing-sm);
+    }
+    
+    .splash-content {
+        flex-direction: row;
+        gap: var(--spacing-xl);
+        align-items: center;
+    }
+    
+    .logo-container {
+        margin-bottom: 0;
+    }
+    
+    .loading-section {
+        margin-top: 0;
+    }
+    
+    .sos-section {
+        padding: var(--spacing-lg);
+    }
+    
+    .sos-container {
+        flex-direction: row;
+        gap: var(--spacing-xl);
+    }
+    
+    .sos-description {
+        max-width: 200px;
+        text-align: left;
+    }
+}
+
+/* Ajustes para telas de alta resolução */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 800px;
+    }
+    
+    .dashboard-container,
+    .citizen-container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .stats-overview {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+    
+    .admin-sections {
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    }
+}
+
+/* Ajustes para modo escuro/claro (se necessário) */
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-primary: #f8f9fa;
+        --bg-secondary: #ffffff;
+        --bg-tertiary: #e9ecef;
+        --bg-card: rgba(255, 255, 255, 0.8);
+        --text-primary: #212529;
+        --text-secondary: #6c757d;
+        --text-muted: #adb5bd;
+        --border-primary: rgba(0, 0, 0, 0.1);
+        --border-secondary: rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Ajustes para usuários que preferem menos movimento */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .splash-particles {
+        animation: none;
+    }
+    
+    .logo-image {
+        animation: none;
+    }
+    
+    .logo-glow {
+        animation: none;
+    }
+    
+    .spinner-ring,
+    .spinner-core {
+        animation: none;
+    }
+    
+    .progress-fill {
+        animation: none;
+    }
+    
+    .sos-pulse {
+        animation: none;
+    }
+}
+
+/* Ajustes para contraste alto */
+@media (prefers-contrast: high) {
+    :root {
+        --border-primary: rgba(255, 255, 255, 0.5);
+        --border-secondary: rgba(255, 255, 255, 0.7);
+        --text-secondary: #ffffff;
+        --text-muted: #cccccc;
+    }
+    
+    .container,
+    .access-card,
+    .stat-card,
+    .feature-card {
+        border-width: 2px;
+    }
+    
+    .btn,
+    .submit-button,
+    .feature-button {
+        border-width: 2px;
+    }
+} 

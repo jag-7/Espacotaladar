@@ -3,269 +3,577 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurante</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Montserrat+Alternates:wght@800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>SOS CISP - Sistema de Emergência Inteligente</title>
+    <meta name="description" content="Sistema de comunicação de emergência para cidadãos e policiais">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/imagens/logo.png">
 </head>
 <body>
-    <div class="main-content">
-        <nav class="menu">
-            <a href="#" class="logo">
-                <img src="logo.png" alt="Logo do Restaurante Espaço Sabor" class="logo-img">
-                <span class="logo-nome">Espaço Taladar</span>
-            </a>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- Splash Screen Moderno -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-background">
+            <div class="splash-particles"></div>
+        </div>
+        <div class="splash-content">
+            <div class="logo-container">
+                <div class="logo-wrapper">
+                    <img src="assets/imagens/logo.png" alt="SOS CISP Logo" class="logo-image">
+                    <div class="logo-glow"></div>
+                </div>
+                <h1 class="logo-text">SOS CISP</h1>
+                <p class="logo-subtitle">Sistema de Emergência Inteligente</p>
+                <div class="logo-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Segurança Pública</span>
+                </div>
             </div>
-            <div class="nav-links">
-                <a href="#inicio">Início</a>
-                <a href="#cardapio">Cardápio</a>
-                <a href="#finalizar">Finalizar Pedido</a>
-            </div>
-        </nav>
-
-        <section class="hero" id="inicio">
-            <div class="hero-content">
-                <h1>Bem-vindo ao Espaço Taladar</h1>
-                <p>O melhor hambúrguer artesanal da cidade!</p>
-                <p>Sabores únicos, ingredientes frescos e um ambiente acolhedor.</p>
-            </div>
-        </section>
-        <div class="hero-divider"></div>
-        <h2 class="categorias-titulo">Categorias</h2>
-        <div class="categoria-unica">
-            <div class="categoria-item">
-                <span class="categoria-emoji">🍔</span>
-                <span class="categoria-nome">Hambúrguer</span>
-            </div>
-            <div class="categoria-item">
-                <span class="categoria-emoji">🌭</span>
-                <span class="categoria-nome">Pão</span>
-            </div>
-            <div class="categoria-item">
-                <span class="categoria-emoji">🥤</span>
-                <span class="categoria-nome">Bebida</span>
+            <div class="loading-section">
+                <div class="loading-spinner">
+                    <div class="spinner-ring"></div>
+                </div>
+                <div class="loading-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <p class="loading-text">Inicializando sistema de segurança</p>
+                </div>
+                <button onclick="skipSplash()" class="skip-button">
+                    <i class="fas fa-forward"></i>
+                    Pular
+                </button>
             </div>
         </div>
-        <div class="espaco-categorias"></div>
-        <div class="linha-vertical-wrapper" id="cardapio">
-            <div class="hamburguer-card">
-                <span class="hamburguer-titulo">Hambúrgueres</span>
-            </div>
-            <div class="imagem-lateral-esquerda">
-                <div class="card-hamburguer">
-                    <div class="card-superior">
-                        <div class="card-imagem">
-                            <img src="1.jpg" alt="Hambúrguer Normal" class="img-lateral" data-carrossel="hamburguer1">
-                            <div class="carrossel-controles">
-                                <span class="carrossel-ponto ativo"></span>
-                                <span class="carrossel-ponto"></span>
-                                <span class="carrossel-ponto"></span>
-                            </div>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-titulo">Hambúrguer Normal</h3>
-                            <p class="card-descricao">Hambúrguer artesanal, queijo, bacon crocante, alface, tomate e molho especial</p>
-                        </div>
-                    </div>
-                    <p class="card-preco" data-base-price="800">800 Kz</p>
-                    <div class="card-actions">
-                        <input type="number" class="quantity-input" min="1" value="1">
-                        <button class="btn-adicionar">Adicionar ao Pedido</button>
-                    </div>
-                </div>
-            </div>
-            <div class="imagem-lateral-direita">
-                <div class="card-hamburguer">
-                    <div class="card-superior">
-                        <div class="card-imagem">
-                            <img src="2.jpg" alt="Hambúrguer Suculento" class="img-lateral" data-carrossel="hamburguer2">
-                            <div class="carrossel-controles">
-                                <span class="carrossel-ponto ativo"></span>
-                                <span class="carrossel-ponto"></span>
-                                <span class="carrossel-ponto"></span>
-                            </div>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-titulo">Hambúrguer Suculento</h3>
-                            <p class="card-descricao">Dois hambúrgueres artesanais, queijo, presunto, bacon, ovo, alface, tomate e molho especial</p>
-                        </div>
-                    </div>
-                    <p class="card-preco" data-base-price="1200">1.200 Kz</p>
-                    <div class="card-actions">
-                        <input type="number" class="quantity-input" min="1" value="1">
-                        <button class="btn-adicionar">Adicionar ao Pedido</button>
-                    </div>
-                </div>
-            </div>
+    </div>
 
-            <!-- Seção de Pães -->
-            <div class="paes-card" style="margin-top: 420px;">
-                <span class="hamburguer-titulo">Pães</span>
-            </div>
-            <div class="imagem-lateral-esquerda" style="top: 670px;">
-                <div class="card-hamburguer">
-                    <div class="card-superior">
-                        <div class="card-imagem">
-                            <img src="1.jpg" alt="Pão Malandro" class="img-lateral" data-carrossel="pao1">
-                            <div class="carrossel-controles">
-                                <span class="carrossel-ponto ativo"></span>
-                                <span class="carrossel-ponto"></span>
-                                <span class="carrossel-ponto"></span>
-                            </div>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-titulo">Pão Malandro</h3>
-                            <p class="card-descricao">Pão artesanal, queijo, bacon crocante, alface, tomate e molho especial</p>
-                        </div>
-                    </div>
-                    <p class="card-preco" data-base-price="1300">1.300 Kz</p>
-                    <div class="card-actions">
-                        <input type="number" class="quantity-input" min="1" value="1">
-                        <button class="btn-adicionar">Adicionar ao Pedido</button>
+    <!-- Tela de Seleção de Acesso -->
+    <div id="access-selection" class="screen hidden">
+        <div class="container">
+            <div class="header-section">
+                <div class="header-content">
+                    <h1 class="main-title">SOS CISP</h1>
+                    <p class="main-subtitle">Escolha seu tipo de acesso</p>
+                    <div class="header-badge">
+                        <i class="fas fa-lock"></i>
+                        <span>Sistema Seguro</span>
                     </div>
                 </div>
             </div>
-            <div class="imagem-lateral-direita" style="top: 670px;">
-                <div class="card-hamburguer">
-                    <div class="card-superior">
-                        <div class="card-imagem">
-                            <img src="2.jpg" alt="Pão Absurdo" class="img-lateral" data-carrossel="pao2">
-                            <div class="carrossel-controles">
-                                <span class="carrossel-ponto ativo"></span>
-                                <span class="carrossel-ponto"></span>
-                                <span class="carrossel-ponto"></span>
-                            </div>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-titulo">Pão Absurdo</h3>
-                            <p class="card-descricao">Dois pães artesanais, queijo, presunto, bacon, ovo, alface, tomate e molho especial</p>
-                        </div>
-                    </div>
-                    <p class="card-preco" data-base-price="2600">2.600 Kz</p>
-                    <div class="card-actions">
-                        <input type="number" class="quantity-input" min="1" value="1">
-                        <button class="btn-adicionar">Adicionar ao Pedido</button>
-                    </div>
-                </div>
-            </div>
-            <div class="linha-vertical" style="height: 1000px;"></div>
-            <div style="height: 20px;"></div> <!-- Espaço abaixo da linha vertical -->
             
-            <!-- Seção de Bebidas -->
-            <div class="bebidas-container" style="width: 820px; background-color: #D59D4B; margin: 0 auto; padding: 1rem; box-sizing: border-box; border-radius: 12px;">
-                <h3 style="color: white; font-family: 'Montserrat Alternates', sans-serif; font-weight: 800; font-size: 1.5rem; margin: 0 0 1rem 0; text-align: center; width: 100%;">Bebidas</h3>
-                <div class="bebida-item">
-                    <img src="5.png" alt="Fanta" class="bebida-img">
-                    <h4 class="bebida-nome">Fanta</h4>
-                    <p class="bebida-preco" data-base-price="200">200 Kz</p>
-                    <input type="number" class="quantity-input" min="1" value="1">
-                    <button class="btn-adicionar">Adicionar</button>
-                </div>
-                <div class="bebida-item">
-                    <img src="5.png" alt="Sprite" class="bebida-img">
-                    <h4 class="bebida-nome">Sprite</h4>
-                    <p class="bebida-preco" data-base-price="200">200 Kz</p>
-                    <input type="number" class="quantity-input" min="1" value="1">
-                    <button class="btn-adicionar">Adicionar</button>
-                </div>
-                <div class="bebida-item">
-                    <img src="5.png" alt="Água Mineral" class="bebida-img">
-                    <h4 class="bebida-nome">Água Mineral</h4>
-                    <p class="bebida-preco" data-base-price="100">100 Kz</p>
-                    <input type="number" class="quantity-input" min="1" value="1">
-                    <button class="btn-adicionar">Adicionar</button>
-                </div>
-                <div class="bebida-item">
-                    <img src="5.png" alt="Sumo Natural" class="bebida-img">
-                    <h4 class="bebida-nome">Sumo Natural</h4>
-                    <p class="bebida-preco" data-base-price="300">300 Kz</p>
-                    <input type="number" class="quantity-input" min="1" value="1">
-                    <button class="btn-adicionar">Adicionar</button>
-                </div>
-            </div> <!-- Fim da seção de bebidas -->
-
-            <!-- Seção de informações do cliente e finalização do pedido -->
-            <div id="finalizar" class="cliente-card" style="width: 800px; margin: 2rem auto; padding: 1.5rem; border: 3px solid #D59D4B; background-color: #7E401B; border-radius: 12px; color: white; font-family: 'Montserrat', sans-serif;">
-                <h3 style="font-family: 'Montserrat Alternates', sans-serif; font-weight: 800; font-size: 1.5rem; margin-bottom: 1rem;">Informações do Cliente</h3>
-                <form>
-                    <div style="margin-bottom: 1rem;">
-                        <label for="nome" style="display: block; margin-bottom: 0.3rem;">Nome:</label>
-                        <input type="text" id="nome" name="nome" style="width: 100%; padding: 0.5rem; border-radius: 8px; border: none; font-size: 1rem;">
+            <div class="access-grid">
+                <div class="access-card police-card" data-access="police">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="card-badge">Oficial</div>
                     </div>
-                    <div style="margin-bottom: 1rem;">
-                        <label for="numero" style="display: block; margin-bottom: 0.3rem;">Número:</label>
-                        <input type="tel" id="numero" name="numero" style="width: 100%; padding: 0.5rem; border-radius: 8px; border: none; font-size: 1rem;">
+                    <div class="card-content">
+                        <h3>Acesso Policial</h3>
+                        <p>Painel de controle para agentes de segurança pública</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> Visualizar emergências</li>
+                            <li><i class="fas fa-check"></i> Gerenciar mensagens</li>
+                            <li><i class="fas fa-check"></i> Estatísticas em tempo real</li>
+                        </ul>
                     </div>
-                    <div style="margin-bottom: 1rem;">
-                        <label for="localizacao" style="display: block; margin-bottom: 0.3rem;">Localização:</label>
-                        <input type="text" id="localizacao" name="localizacao" style="width: 100%; padding: 0.5rem; border-radius: 8px; border: none; font-size: 1rem;">
-                    </div>
-                    <hr style="border: 1px solid #D59D4B; width: 100%; margin: 1rem 0;">
-
-                    <h3 style="font-family: 'Montserrat Alternates', sans-serif; font-weight: 800; font-size: 1.5rem; margin-bottom: 1rem;">Itens do Pedido</h3>
-                    
-                    <!-- A div itens-pedido-container será inserida via JavaScript aqui -->
-                    
-                    <div id="total-container" style="margin-bottom: 1rem; font-size: 1.2rem; font-weight: 600; color: white; display: flex; justify-content: space-between;">
-                        <span>Total:</span> <span id="total-valor">0 Kz</span>
-                    </div>
-                    <div style="text-align: center; margin-top: 1rem;">
-                        <button type="button" id="finalizar-pedido" style="background-color: #D59D4B; color: #7E401B; font-weight: 700; padding: 1.25rem 3rem; font-size: 1.25rem; border: none; border-radius: 8px; cursor: pointer;">
-                            Finalizar Pedido
+                    <div class="card-footer">
+                        <button class="access-button">
+                            <span>Acessar</span>
+                            <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
-                </form>
-            </div>
-        </div> <!-- Fim da linha-vertical-wrapper -->
-
-        <!-- Modal de Zoom -->
-        <div class="modal-zoom">
-            <div class="modal-conteudo">
-                <button class="modal-fechar">&times;</button>
-                <img src="" alt="" class="modal-img">
-            </div>
-        </div>
-        
-        <!-- Informações de contato e localização -->
-        <div class="footer-top-space" style="background-color: white; color: #D59D4B; font-family: 'Montserrat', sans-serif; text-align: center; padding: 1.5rem 0;">
-            <p style="margin: 0 0 0.5rem 0; font-weight: 600;">Nossa Localização: Maianga, por detrás da Escola 1999.</p>
-            <div style="margin: 1rem 0;">
-                <h3 style="margin: 0 0 0.5rem 0; font-weight: 700;">Nossos contactos:</h3>
-                <p style="margin: 0.25rem 0;">+244 900-000-000</p>
-                <p style="margin: 0.25rem 0;">+244 911-111-111</p>
-            </div>
-            <div>
-                <h3 style="margin: 0 0 0.5rem 0; font-weight: 700;">Nossas redes sociais:</h3>
-                <div style="display: flex; justify-content: center; gap: 2rem;">
-                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook" style="color: #D59D4B; font-size: 2rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="32" height="32">
-                            <path d="M22.675 0h-21.35C.6 0 0 .6 0 1.325v21.351C0 23.4.6 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.466.099 2.797.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.312h3.59l-.467 3.622h-3.123V24h6.116C23.4 24 24 23.4 24 22.675V1.325C24 .6 23.4 0 22.675 0z"/>
-                        </svg>
-                    </a>
-                    <a href="https://wa.me/" target="_blank" aria-label="WhatsApp" style="color: #D59D4B; font-size: 2rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="32" height="32">
-                            <path d="M20.52 3.48A11.815 11.815 0 0012 0C5.373 0 0 5.373 0 12a11.82 11.82 0 001.64 6.01L0 24l6.12-1.6A11.82 11.82 0 0012 24c6.627 0 12-5.373 12-12 0-3.2-1.25-6.21-3.48-8.52zm-8.52 17.52a9.6 9.6 0 01-5.2-1.5l-.37-.22-3.6.94.96-3.5-.24-.36a9.6 9.6 0 0116.5-6.3 9.6 9.6 0 01-8.8 10.94zm5.1-7.2c-.28-.14-1.66-.82-1.92-.91-.26-.1-.45-.14-.64.14-.18.28-.7.91-.86 1.1-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.66-1.55-1.94-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.1-.18.05-.34-.02-.48-.07-.14-.64-1.54-.88-2.12-.23-.56-.46-.48-.64-.49-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.26.28-1 1-1 2.44 0 1.44 1.03 2.84 1.17 3.04.14.18 2.02 3.08 4.9 4.32.68.29 1.21.46 1.62.59.68.22 1.3.19 1.79.12.55-.08 1.66-.68 1.9-1.34.24-.66.24-1.22.17-1.34-.07-.12-.26-.18-.54-.32z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" style="color: #D59D4B; font-size: 2rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="32" height="32">
-                            <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.75 2.25a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z"/>
-                        </svg>
-                    </a>
+                </div>
+                
+                <div class="access-card citizen-card" data-access="citizen">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="card-badge">Cidadão</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Acesso Cidadão</h3>
+                        <p>Interface para reportar emergências e solicitar ajuda</p>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> Botão SOS de emergência</li>
+                            <li><i class="fas fa-check"></i> Envio de localização</li>
+                            <li><i class="fas fa-check"></i> Mensagens de áudio</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <button class="access-button">
+                            <span>Acessar</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div> <!-- Fim do main-content -->
-    
-    <footer class="footer">
-        <p>&copy; 2024 Espaço Taladar. Todos os direitos reservados.</p>
-    </footer>
-    <script src="script.js"></script>
+    </div>
+
+    <!-- Tela de Login - Polícia -->
+    <div id="police-login" class="screen hidden">
+        <div class="container">
+            <div class="login-header">
+                <button class="back-button" onclick="showScreen('access-selection')">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <div class="login-title">
+                    <h2>Acesso Policial</h2>
+                    <p>Faça login com suas credenciais oficiais</p>
+                </div>
+            </div>
+            
+            <form id="police-login-form" class="login-form">
+                <div class="form-group">
+                    <label for="police-id">ID do Agente</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-id-card input-icon"></i>
+                        <input type="text" id="police-id" name="police-id" placeholder="Ex: POL007" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="police-code">Código Interno</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-key input-icon"></i>
+                        <input type="password" id="police-code" name="police-code" placeholder="Ex: CISP2007" required>
+                    </div>
+                    <small class="form-hint">
+                        <i class="fas fa-info-circle"></i>
+                        Credenciais padrão: POL007 / CISP2007
+                    </small>
+                </div>
+                
+                <button type="submit" class="submit-button">
+                    <span>Entrar no Sistema</span>
+                    <i class="fas fa-sign-in-alt"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Painel Policial Moderno -->
+    <div id="police-panel" class="screen hidden">
+        <div class="dashboard-container">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <div class="user-profile">
+                        <div class="profile-avatar">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="profile-info">
+                            <h3 id="police-name">Agente POL007</h3>
+                            <span class="profile-role">Agente de Segurança</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <button class="action-button" onclick="refreshData()">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                        <button class="action-button" onclick="showSettings()">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                        <button class="logout-button" onclick="logout()">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Sair</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+            
+            <main class="dashboard-main">
+                <div class="stats-overview">
+                    <div class="stat-card primary">
+                        <div class="stat-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="messages-count">0</h3>
+                            <p>Mensagens</p>
+                        </div>
+                        <div class="stat-trend">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+12%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card warning">
+                        <div class="stat-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="emergencies-count">0</h3>
+                            <p>Emergências</p>
+                        </div>
+                        <div class="stat-trend">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+5%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card success">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="network-status">Online</h3>
+                            <p>Rede</p>
+                        </div>
+                        <div class="stat-trend">
+                            <i class="fas fa-circle"></i>
+                            <span>Ativo</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="messages-dashboard">
+                    <div class="section-header">
+                        <div class="section-title">
+                            <h3>Mensagens Recebidas</h3>
+                            <span class="section-badge" id="messages-badge">0 novas</span>
+                        </div>
+                        <div class="section-filters">
+                            <button class="filter-button active" data-filter="all">
+                                <i class="fas fa-list"></i>
+                                <span>Todas</span>
+                            </button>
+                            <button class="filter-button" data-filter="text">
+                                <i class="fas fa-comment"></i>
+                                <span>Texto</span>
+                            </button>
+                            <button class="filter-button" data-filter="audio">
+                                <i class="fas fa-microphone"></i>
+                                <span>Áudio</span>
+                            </button>
+                            <button class="filter-button" data-filter="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Localização</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="messages-list" class="messages-list">
+                        <!-- Mensagens serão carregadas dinamicamente -->
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Tela de Login - Cidadão -->
+    <div id="citizen-login" class="screen hidden">
+        <div class="container">
+            <div class="login-header">
+                <button class="back-button" onclick="showScreen('access-selection')">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <div class="login-title">
+                    <h2>Acesso Cidadão</h2>
+                    <p>Entre com seus dados pessoais</p>
+                </div>
+            </div>
+            
+            <form id="citizen-login-form" class="login-form">
+                <div class="form-group">
+                    <label for="citizen-bi">Número do BI</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-id-card input-icon"></i>
+                        <input type="text" id="citizen-bi" name="citizen-bi" placeholder="Ex: 123456789" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="citizen-password">Senha</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="citizen-password" name="citizen-password" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-button">
+                    <span>Entrar</span>
+                    <i class="fas fa-sign-in-alt"></i>
+                </button>
+                
+                <div class="form-footer">
+                    <p>Não tem conta? <a href="#" onclick="showScreen('citizen-register')">Cadastrar-se</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Tela de Cadastro - Cidadão -->
+    <div id="citizen-register" class="screen hidden">
+        <div class="container">
+            <div class="login-header">
+                <button class="back-button" onclick="showScreen('citizen-login')">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <div class="login-title">
+                    <h2>Cadastro de Cidadão</h2>
+                    <p>Preencha seus dados pessoais</p>
+                </div>
+            </div>
+            
+            <form id="citizen-register-form" class="register-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="register-name">Nome Completo</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user input-icon"></i>
+                            <input type="text" id="register-name" name="register-name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-bi">Número do BI</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-id-card input-icon"></i>
+                            <input type="text" id="register-bi" name="register-bi" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input type="email" id="register-email" name="register-email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-phone">Telefone</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-phone input-icon"></i>
+                            <input type="tel" id="register-phone" name="register-phone" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="register-address">Endereço</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-map-marker-alt input-icon"></i>
+                        <textarea id="register-address" name="register-address" required></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="register-password">Senha</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" id="register-password" name="register-password" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-confirm-password">Confirmar Senha</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" id="register-confirm-password" name="register-confirm-password" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-button">
+                    <span>Criar Conta</span>
+                    <i class="fas fa-user-plus"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Tela Principal - Cidadão -->
+    <div id="citizen-main" class="screen hidden">
+        <div class="citizen-container">
+            <header class="citizen-header">
+                <div class="header-content">
+                    <h1>SOS CISP</h1>
+                    <p>Sistema de Emergência Inteligente</p>
+                </div>
+                <div class="user-menu">
+                    <div class="user-info">
+                        <i class="fas fa-user"></i>
+                        <span id="citizen-name">Nome do Cidadão</span>
+                    </div>
+                    <button class="logout-button" onclick="citizenLogout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Sair</span>
+                    </button>
+                </div>
+            </header>
+            
+            <main class="citizen-main">
+                <div class="sos-section">
+                    <div class="sos-container">
+                        <button id="sos-button" class="sos-button">
+                            <div class="sos-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <span class="sos-text">SOS</span>
+                            <div class="sos-pulse"></div>
+                        </button>
+                        <p class="sos-description">Pressione para enviar uma solicitação de emergência</p>
+                    </div>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Localização Atual</h3>
+                        </div>
+                        <div id="location-display" class="location-display">
+                            <i class="fas fa-crosshairs"></i>
+                            <span id="location-text">Localização não disponível</span>
+                        </div>
+                        <button id="send-location-btn" class="feature-button">
+                            <i class="fas fa-location-arrow"></i>
+                            <span>Enviar Localização</span>
+                        </button>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <i class="fas fa-comment-dots"></i>
+                            <h3>Mensagens Rápidas</h3>
+                        </div>
+                        <div class="quick-messages-grid">
+                            <button class="quick-message-btn" onclick="sendQuickMessage('Roubo')">
+                                <i class="fas fa-mask"></i>
+                                <span>Roubo</span>
+                            </button>
+                            <button class="quick-message-btn" onclick="sendQuickMessage('Violência')">
+                                <i class="fas fa-fist-raised"></i>
+                                <span>Violência</span>
+                            </button>
+                            <button class="quick-message-btn" onclick="sendQuickMessage('Estou a ser perseguido')">
+                                <i class="fas fa-running"></i>
+                                <span>Perseguição</span>
+                            </button>
+                            <button class="quick-message-btn" onclick="sendQuickMessage('Acidente')">
+                                <i class="fas fa-car-crash"></i>
+                                <span>Acidente</span>
+                            </button>
+                            <button class="quick-message-btn" onclick="sendQuickMessage('Incêndio')">
+                                <i class="fas fa-fire"></i>
+                                <span>Incêndio</span>
+                            </button>
+                            <button class="quick-message-btn" onclick="sendQuickMessage('Outro')">
+                                <i class="fas fa-ellipsis-h"></i>
+                                <span>Outro</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <i class="fas fa-microphone"></i>
+                            <h3>Gravação de Áudio</h3>
+                        </div>
+                        <button id="record-audio-btn" class="feature-button">
+                            <i class="fas fa-microphone"></i>
+                            <span id="audio-btn-text">Iniciar Gravação</span>
+                        </button>
+                        <div class="audio-status" id="audio-status"></div>
+                    </div>
+                    
+                    <div class="feature-card full-width">
+                        <div class="feature-header">
+                            <i class="fas fa-edit"></i>
+                            <h3>Mensagem Personalizada</h3>
+                        </div>
+                        <div class="message-input-container">
+                            <textarea id="custom-message-input" placeholder="Descreva sua emergência em detalhes..."></textarea>
+                            <button id="send-custom-message-btn" class="send-button">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Enviar</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Painel do Administrador -->
+    <div id="admin-panel" class="screen hidden">
+        <div class="dashboard-container">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h2>Painel Administrativo</h2>
+                    <p>Gerenciamento do Sistema SOS CISP</p>
+                </div>
+                <div class="header-right">
+                    <button class="logout-button" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Sair</span>
+                    </button>
+                </div>
+            </header>
+            
+            <main class="dashboard-main">
+                <div class="admin-stats">
+                    <div class="admin-stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="total-users">0</h3>
+                            <p>Usuários</p>
+                        </div>
+                    </div>
+                    <div class="admin-stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="total-police">0</h3>
+                            <p>Policiais</p>
+                        </div>
+                    </div>
+                    <div class="admin-stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="total-citizens">0</h3>
+                            <p>Cidadãos</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-sections">
+                    <div class="admin-section">
+                        <h3>Gerenciar Usuários</h3>
+                        <div id="users-list" class="users-list">
+                            <!-- Lista de usuários será carregada dinamicamente -->
+                        </div>
+                    </div>
+                    
+                    <div class="admin-section">
+                        <h3>Estatísticas Gerais</h3>
+                        <div id="general-stats" class="general-stats">
+                            <!-- Estatísticas serão carregadas dinamicamente -->
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Sistema de Notificações -->
+    <div id="notification-container" class="notification-container"></div>
+
+    <script src="assets/js/unified.js"></script>
 </body>
 </html>
